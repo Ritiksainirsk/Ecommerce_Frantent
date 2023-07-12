@@ -13,6 +13,8 @@ function Product( {product} ) {
     isHalf: true,
   };
   return (
+    <>
+
     <Link
       href={`/product/${product._id}`}
       className="w-[15vmax] flex flex-col no-underline text-[rgb(48,48,48)] m-[2vmax] transition-all duration-500 hover:shadow-lg hover:-translate-y-[1vmax]"
@@ -20,7 +22,7 @@ function Product( {product} ) {
       <img
         src={product?.images?.[0]?.Url}
         alt={product.name}
-        className="w-[15vmax]"
+        className="w-[15vmax] h-[20vmax]"
       />
       <p className="text-[1.3vmax] mx-[1vmax] my-[0.5vmax] mb-0 font-bold">
         {product.name}
@@ -32,7 +34,8 @@ function Product( {product} ) {
       <span className="m-[0.5vmax] text-[tomato] text-[1vmax] font-bold">
         ₹{product.price}
       </span>
-    </Link>
+    </Link> 
+    </>
   );
 }
 

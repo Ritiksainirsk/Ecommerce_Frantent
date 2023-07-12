@@ -18,6 +18,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/pages/componant/Home/Product.js", "src/pages/Store/getProduct.js", "src/pages/componant/layout/metaData.js", "src/pages/componant/Home/home.js", "src/pages/Store/store.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/pages/componant/Home/ProductCard.js", "src/pages/Store/getProduct.js", "src/pages/componant/layout/metaData.js", "src/pages/componant/Home/home.js", "src/pages/Store/store.js", "src/pages/product/[product].js"],
   "exclude": ["node_modules"]
 }

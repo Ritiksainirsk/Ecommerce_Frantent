@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 
-export const getProductsData = createAsyncThunk("products",async()=>{
-  const res = await fetch("http://localhost:4000/api/v1/products")
+export const getProductsData = createAsyncThunk("products",async(keyword="")=>{
+  const res = await fetch(`http://localhost:4000/api/v1/products?keyword=${keyword}`)
   const result = await res.json()
   return result;
 })
@@ -12,7 +12,8 @@ const productsSlice = createSlice({
   initialState:{
     product:[],
     loading:false,
-    error:null
+    error:null,
+    // resultperpage:0
   },
   reducers:{},
   extraReducers:{
@@ -22,6 +23,7 @@ const productsSlice = createSlice({
     [getProductsData.fulfilled]:(state,action)=>{
       state.loading = false
       state.product = action.payload
+      // state.resultperpage = action.payload.resultperpage
     },
     [getProductsData.rejected]:(state,action)=>{
       state.loading = false
